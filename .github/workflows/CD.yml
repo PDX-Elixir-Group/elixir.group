@@ -127,6 +127,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           source: "_build/prod/prod-${{ github.sha }}.tar.gz"
           target: "/tmp"
+          debug: true
       - name: Extract release command
         uses: appleboy/ssh-action@master
         with:
