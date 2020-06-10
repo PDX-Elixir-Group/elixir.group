@@ -2,9 +2,7 @@ name: CD
 on:
   push:
     branches:
-      - '*'   
-      # - master
-
+      - '*'
 jobs:
   Test:
     runs-on: ubuntu-latest
