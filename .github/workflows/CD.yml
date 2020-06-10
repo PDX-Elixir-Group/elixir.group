@@ -63,7 +63,7 @@ jobs:
           SECRET_KEY_BASE: ${{ secrets.SECRET_KEY_BASE }}
         run: MIX_ENV=prod mix release --version ${{ github.sha }}
       - name: Whats here?
-        run: ls -la
+        run: ls -la _build/prod/
       - name: copy file via ssh key
         uses: appleboy/scp-action@master
         with:
