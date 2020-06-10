@@ -98,9 +98,9 @@ jobs:
             mkdir -p elixir_group/releases
             mkdir -p elixir_group/releases/${{ github.sha }}
             tar -xzvf /tmp/_build/prod/prod-${{ github.sha }}.tar.gz --directory ~/elixir_group/releases/${{ github.sha}}/
-            ./elixir_group/morhpic_pro stop
+            ./elixir_group/elixir_group stop
             ln -sfT ~/elixir_group/releases/${{ github.sha}}/ ~/elixir_group/current
-            ./elixir_group/morhpic_pro start
+            ./elixir_group/elixir_group start
       - name: Run migrations
         uses: appleboy/ssh-action@master
         with:
