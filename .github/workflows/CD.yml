@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - '*'
-# jobs:
+  jobs:
   # Test:
   #   runs-on: ubuntu-latest
   #   services:
