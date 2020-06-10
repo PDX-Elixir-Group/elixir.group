@@ -52,7 +52,7 @@ config :elixir_group, ElixirGroup.Repo,
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10")
 
 config :elixir_group, ElixirGroup.Endpoint,
-  url: [host: "morphic.pro", scheme: "https", port: 443],
+  url: [host: "elixir.group", scheme: "https", port: 443],
   http: [
     port: String.to_integer(System.get_env("HTTP_PORT") || "4000"),
     transport_options: [socket_opts: [:inet6]]
