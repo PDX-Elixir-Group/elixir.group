@@ -10,7 +10,9 @@ defmodule ElixirGroup.MixProject do
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [t: :test, "coveralls.html": :test]
     ]
   end
 
@@ -46,7 +48,8 @@ defmodule ElixirGroup.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:excoveralls, "0.12.3", only: [:test, :dev]},
     ]
   end
 
@@ -58,10 +61,10 @@ defmodule ElixirGroup.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
-      setup: ["deps.get", "ecto.setup", "cmd npm install --prefix assets"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"]
+      test: ["ecto.create --quiet", "ecto.migrate", "test"],
+      t: ["ecto.create --quiet", "ecto.migrate", "coveralls.html", "credo --strict"]
     ]
   end
 end
