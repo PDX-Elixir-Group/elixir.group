@@ -117,7 +117,7 @@ jobs:
           # AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           # SENTRY_DNS: ${{ secrets.SENTRY_DNS }}
         run: MIX_ENV=prod mix release --version ${{ github.sha }}
-      - name: Debug release tar
+      - name: Check tar
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
@@ -126,8 +126,7 @@ jobs:
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-          ls -la _build/prod/
-
+            ls -la _build/prod/
       - name: copy file via ssh key
         uses: appleboy/scp-action@master
         with:
