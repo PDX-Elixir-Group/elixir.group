@@ -54,8 +54,7 @@ config :elixir_group, ElixirGroup.Repo,
 config :elixir_group, ElixirGroup.Endpoint,
   url: [host: "elixir.group", scheme: "https", port: 443],
   http: [
-    port: String.to_integer(System.get_env("HTTP_PORT") || "4000"),
-    transport_options: [socket_opts: [:inet6]]
+    port: 4000
   ],
   secret_key_base: secret_key_base,
   cache_static_manifest: "priv/static/cache_manifest.json",
