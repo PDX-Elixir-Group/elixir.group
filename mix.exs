@@ -4,6 +4,12 @@ defmodule ElixirGroup.MixProject do
   def project do
     [
       app: :elixir_group,
+      releases: [
+        prod: [
+          include_executables_for: [:unix],
+          steps: [:assemble, :tar]
+        ]
+      ],
       version: "0.1.0",
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
