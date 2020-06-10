@@ -46,13 +46,13 @@ secret_key_base =
 #     environment variable SENTRY_DNS is missing.
 #     """
 
-config :elixir_group, ElixirGroup.Repo,
+config :elixir_group, MorphicPro.Repo,
   # ssl: true,
   url: database_url,
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10")
 
-config :elixir_group, ElixirGroupWeb.Endpoint,
-  url: [host: "elixir.group", scheme: "https", port: 443],
+config :elixir_group, ElixirGroup.Endpoint,
+  url: [host: "morphic.pro", scheme: "https", port: 443],
   http: [
     port: String.to_integer(System.get_env("HTTP_PORT") || "4000"),
     transport_options: [socket_opts: [:inet6]]
@@ -61,7 +61,7 @@ config :elixir_group, ElixirGroupWeb.Endpoint,
   cache_static_manifest: "priv/static/cache_manifest.json",
   server: true
 
-# config :elixir_group, ElixirGroupWeb.Mailer,
+# config :elixir_group, ElixirGroup.Mailer,
 #   adapter: Bamboo.MailgunAdapter,
 #   api_key: mailer_api_key,
 #   domain: mailer_domain
@@ -94,7 +94,7 @@ config :logger, level: :info
 # To get SSL working, you will need to add the `https` key
 # to the previous section and set your `:url` port to 443:
 #
-#     config :elixir_group, ElixirGroupWeb.Endpoint,
+#     config :elixir_group, ElixirGroup.Endpoint,
 #       ...
 #       url: [host: "example.com", port: 443],
 #       https: [
@@ -118,7 +118,7 @@ config :logger, level: :info
 # We also recommend setting `force_ssl` in your endpoint, ensuring
 # no data is ever sent via http, always redirecting to https:
 #
-#     config :elixir_group, ElixirGroupWeb.Endpoint,
+#     config :elixir_group, ElixirGroup.Endpoint,
 #       force_ssl: [hsts: true]
 #
 # Check `Plug.SSL` for all available options in `force_ssl`.
