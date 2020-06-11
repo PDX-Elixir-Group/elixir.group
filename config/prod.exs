@@ -10,7 +10,7 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :elixirgroup, ElixirgroupWeb.Endpoint,
-  url: [host: "example.com", port: 80],
+  url: [host: "elixir.group", port: 443],
   cache_static_manifest: "priv/static/cache_manifest.json",
   server: true
 
