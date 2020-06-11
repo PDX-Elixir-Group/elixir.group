@@ -16,7 +16,7 @@ jobs:
       - name: Cache mix modules
         uses: actions/cache@v1
         env:
-          cache-name: cache-mix-modules
+          cache-name: cache-mix-modules2
         with:
           path: deps
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/mix.lock') }}
@@ -36,7 +36,7 @@ jobs:
       - name: Cache npm modules
         uses: actions/cache@v1
         env:
-          cache-name: cache-npm-modules
+          cache-name: cache-npm-modules2
         with:
           path: assets/node_module
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
