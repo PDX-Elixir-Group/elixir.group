@@ -23,7 +23,7 @@ defmodule ElixirgroupWeb do
 
       import Plug.Conn
       import ElixirgroupWeb.Gettext
-      alias ElixirgroupWeb.Routers.RootdomainRouter.Helpers, as: Routes
+      alias ElixirgroupWeb.Router.Helpers, as: Routes
     end
   end
 
@@ -65,7 +65,7 @@ defmodule ElixirgroupWeb do
 
       import Plug.Conn
       import Phoenix.Controller
-      import Phoenix.LiveView.Routers.RootdomainRouter
+      import Phoenix.LiveView.Router
     end
   end
 
@@ -92,6 +92,8 @@ defmodule ElixirgroupWeb do
       import ElixirgroupWeb.ErrorHelpers
       import ElixirgroupWeb.Gettext
       alias ElixirgroupWeb.Routers.RootdomainRouter.Helpers, as: Routes
+      alias ElixirgroupWeb.Routers.SubdomainRouter.Helpers, as: SubRoutes
+
     end
   end
 
