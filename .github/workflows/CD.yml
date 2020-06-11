@@ -77,4 +77,4 @@ jobs:
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            ./elixir_group/current/bin/prod eval "ElixirGroup.Release.migrate"
+            ./elixir_group/current/bin/prod eval "Elixirgroup.Release.migrate"
