@@ -50,5 +50,6 @@ defmodule ElixirgroupWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug ElixirgroupWeb.Router
+  plug ElixirgroupWeb.Plug.Subdomain, ElixirgroupWeb.Routers.SubdomainRouter
+  plug ElixirgroupWeb.Routers.RootdomainRouter
 end

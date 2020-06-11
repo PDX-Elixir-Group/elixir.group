@@ -1,0 +1,14 @@
+<h2><%= @title %></h2>
+
+<%= f = form_for @changeset, "#",
+  id: "group-form",
+  phx_target: @myself,
+  phx_change: "validate",
+  phx_submit: "save" %>
+
+  <%= label f, :subdomain %>
+  <%= text_input f, :subdomain %>
+  <%= error_tag f, :subdomain %>
+
+  <%= submit "Save", phx_disable_with: "Saving..." %>
+</form>
