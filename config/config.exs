@@ -12,6 +12,7 @@ config :elixir_group,
 
 # Configures the endpoint
 config :elixir_group, ElixirGroupWeb.Endpoint,
+  url: [host: "localhost"],
   secret_key_base: "2rZxFq68sv3p0hShu4ZNJv8LaEcdHqWnEMa4dtou2dwC7VlSn05prRPstJXBeA1q",
   render_errors: [view: ElixirGroupWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: ElixirGroup.PubSub,
