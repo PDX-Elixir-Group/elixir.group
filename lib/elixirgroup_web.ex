@@ -83,7 +83,7 @@ defmodule ElixirgroupWeb do
 
       # Import LiveView helpers (live_render, live_component, live_patch, etc)
       import Phoenix.LiveView.Helpers
-      import ElixirGroupWeb.LiveHelpers
+      import ElixirgroupWeb.LiveHelpers
 
 
       # Import basic rendering functionality (render, render_layout, etc)
