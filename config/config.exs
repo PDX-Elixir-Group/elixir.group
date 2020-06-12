@@ -16,7 +16,8 @@ config :elixirgroup, ElixirgroupWeb.Endpoint,
   secret_key_base: "GAO3OPjUze3EApr5OhZtbNfyOVl9OPoZLEZaJYzPkGREcjtb5jRTjzMGxN+DNFfO",
   render_errors: [view: ElixirgroupWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: Elixirgroup.PubSub,
-  live_view: [signing_salt: "kLQ2sF+6"]
+  live_view: [signing_salt: "kLQ2sF+6"],
+  check_origin: {Elixirgroup.Origin, :check_origin, []}
 
 # Configures Elixir's Logger
 config :logger, :console,
